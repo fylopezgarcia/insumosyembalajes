@@ -1,0 +1,58 @@
+/*
+  Paleta basada en el logo real de la empresa (emblema circular dorado/negro
+  sobre fondo blanco). Se refina a un dorado más terroso (menos "trofeo",
+  más metal/latón industrial) y se le suma un verde profundo como acento
+  secundario — nexo con el Eje Cafetero sin caer en cliché de café marrón/crema.
+*/
+:root{
+  /* Marca */
+  --gold: #B8862E;
+  --gold-deep: #8C6520;
+  --ink: #1C1A17;
+  --ink-soft: #3A362E;
+
+  /* Superficies */
+  --paper: #FAF8F3;
+  --surface: #FFFFFF;
+  --surface-2: #F1EDE2;
+  --border: #E3DCC9;
+  --border-strong: #CFC5A6;
+
+  /* Texto */
+  --text: var(--ink);
+  --text-muted: #6B6455;
+  --text-faint: #948C74;
+  --on-dark: #F5F1E6;
+
+  /* Acento secundario (confianza / Eje Cafetero) */
+  --green: #2B6A4C;
+  --green-deep: #1E4A35;
+
+  /* Estado */
+  --success-bg: #E5F1EA;
+  --success-text: #1E4A35;
+  --whatsapp: #25D366;
+  --whatsapp-deep: #1DA851;
+
+  /* Tipografía */
+  --font-display: 'Archivo', 'Arial Narrow', sans-serif;
+  --font-body: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* Escala */
+  --step--1: clamp(0.83rem, 0.8rem + 0.1vw, 0.9rem);
+  --step-0:  clamp(1rem, 0.96rem + 0.2vw, 1.05rem);
+  --step-1:  clamp(1.2rem, 1.1rem + 0.4vw, 1.3rem);
+  --step-2:  clamp(1.5rem, 1.3rem + 0.8vw, 1.75rem);
+  --step-3:  clamp(1.9rem, 1.6rem + 1.4vw, 2.4rem);
+  --step-4:  clamp(2.4rem, 1.9rem + 2.2vw, 3.2rem);
+
+  /* Layout */
+  --container: 1180px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(28,26,23,.05), 0 3px 10px -4px rgba(28,26,23,.12);
+  --shadow-md: 0 6px 24px -8px rgba(28,26,23,.22);
+  --header-h: 76px;
+}
