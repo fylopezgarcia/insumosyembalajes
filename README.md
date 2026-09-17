@@ -18,7 +18,7 @@ sitio-nuevo/
 │   ├── zunchado.html
 │   ├── plastico-stretch.html
 │   ├── papeleria.html
-│   └── bricolage.html
+│   └── herramientas.html
 ├── ciudades/                    Landing por ciudad del Eje Cafetero
 │   ├── pereira.html
 │   ├── dosquebradas.html

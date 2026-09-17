@@ -21,4 +21,14 @@ document.addEventListener('partials:loaded', function () {
   // --- Año dinámico en el footer ---
   var yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // --- Header que se achica al hacer scroll ---
+  var header = document.querySelector('.site-header');
+  if (header) {
+    var onScroll = function () {
+      header.classList.toggle('is-scrolled', window.scrollY > 40);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
 });

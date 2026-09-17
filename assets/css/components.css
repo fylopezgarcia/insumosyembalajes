@@ -10,13 +10,18 @@
 }
 
 .site-header{
-  position:sticky; top:0; z-index:50; background:rgba(250,248,243,.92);
+  position:sticky; top:0; z-index:50; background:rgba(241,228,211,.92);
   backdrop-filter:blur(8px); border-bottom:1px solid var(--border);
+  transition:box-shadow .2s ease;
 }
 .site-header .container{
   display:flex; align-items:center; justify-content:space-between;
-  height:var(--header-h); gap:20px;
+  height:var(--header-h); gap:20px; transition:height .2s ease;
 }
+.site-header.is-scrolled{ box-shadow:var(--shadow-sm); }
+.site-header.is-scrolled .container{ height:58px; }
+.site-header.is-scrolled .brand img{ height:34px; width:34px; }
+.site-header.is-scrolled .brand .brand-text small{ display:none; }
 .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; flex:none; }
 .brand img{ height:44px; width:44px; border-radius:50%; }
 .brand .brand-text{ font-family:var(--font-display); font-weight:800; font-size:16px; line-height:1.15; color:var(--ink); }
@@ -58,9 +63,10 @@
   font-family:var(--font-body); font-weight:700; font-size:14.5px;
   padding:13px 22px; border-radius:9px; border:1px solid transparent;
   text-decoration:none; cursor:pointer; line-height:1; white-space:nowrap;
-  transition:transform .12s ease, box-shadow .12s ease;
+  transition:transform .12s ease, box-shadow .12s ease, background-color .15s ease, border-color .15s ease;
 }
-.btn:active{ transform:translateY(1px); }
+.btn:hover{ transform:translateY(-1px); box-shadow:var(--shadow-sm); }
+.btn:active{ transform:translateY(1px); box-shadow:none; }
 .btn-primary{ background:var(--whatsapp); color:#fff; }
 .btn-primary:hover{ background:var(--whatsapp-deep); }
 .btn-gold{ background:var(--gold); color:var(--ink); }
@@ -140,7 +146,10 @@
 .faq-item summary::-webkit-details-marker{ display:none; }
 .faq-item summary::after{ content:'+'; font-size:22px; color:var(--gold-deep); flex:none; }
 .faq-item[open] summary::after{ content:'–'; }
-.faq-item .faq-a{ padding:0 4px 20px; color:var(--text-muted); font-size:14.5px; max-width:70ch; }
+.faq-item .faq-a{ padding:0 4px 20px; color:var(--text-muted); font-size:14.5px; max-width:70ch; animation:faq-fade .18s ease; }
+.faq-item summary{ transition:color .15s ease; }
+.faq-item summary:hover{ color:var(--gold-deep); }
+@keyframes faq-fade{ from{ opacity:0; transform:translateY(-4px); } to{ opacity:1; transform:translateY(0); } }
 
 /* ============ Sección oscura (confianza / proceso) ============ */
 .section-dark{ background:var(--ink); color:var(--on-dark); }
@@ -175,8 +184,15 @@
   position:fixed; right:20px; bottom:20px; z-index:60; width:58px; height:58px; border-radius:50%;
   background:var(--whatsapp); display:flex; align-items:center; justify-content:center;
   box-shadow:0 8px 20px -4px rgba(37,211,102,.55); text-decoration:none;
+  animation:wa-breathe 3s ease-in-out infinite;
+  transition:transform .15s ease;
 }
+.wa-float:hover{ transform:scale(1.08); animation-play-state:paused; }
 .wa-float svg{ width:30px; height:30px; fill:#fff; }
+@keyframes wa-breathe{
+  0%, 100%{ transform:scale(1); }
+  50%{ transform:scale(1.05); }
+}
 
 /* ============ Footer ============ */
 .site-footer{ background:var(--ink); color:var(--on-dark); padding:56px 0 28px; }
@@ -188,6 +204,14 @@
 .site-footer a:hover{ color:#fff; }
 .site-footer .foot-map{ border-radius:var(--radius-md); overflow:hidden; border:1px solid rgba(245,241,230,.18); }
 .foot-bottom{ border-top:1px solid rgba(245,241,230,.14); padding-top:20px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; font-size:12.5px; color:#8A8371; }
+
+/* ============ Banda de foto en páginas de categoría ============ */
+.category-banner{
+  aspect-ratio:3/1; border-radius:var(--radius-lg); overflow:hidden;
+  box-shadow:var(--shadow-sm); margin:8px 0 4px;
+}
+.category-banner img{ width:100%; height:100%; object-fit:cover; }
+@media (max-width:640px){ .category-banner{ aspect-ratio:4/3; } }
 
 /* ============ Breadcrumb / página interna ============ */
 .breadcrumb{ font-size:13px; color:var(--text-muted); margin-bottom:18px; }
