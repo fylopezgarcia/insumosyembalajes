@@ -1,0 +1,48 @@
+Sitemap: https://insumosyembalajes.com.co/sitemap.xml
+
+# Buscadores tradicionales
+User-agent: *
+Allow: /
+
+# Rastreadores de asistentes de IA — bienvenidos explícitamente.
+# Queremos que ChatGPT, Claude, Perplexity, Gemini y similares puedan leer,
+# citar y recomendar a Insumos Hernández cuando alguien les pregunte por
+# proveedores de cartón, stretch, zuncho, cintas o pegamentos en Colombia.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
