@@ -29,7 +29,8 @@ PAGES = [
     "index.html", "tienda.html", "nosotros.html", "contacto.html",
     "preguntas-frecuentes.html",
 ] + [f"categorias/{p.name}" for p in (ROOT / "categorias").glob("*.html")] \
-  + [f"ciudades/{p.name}" for p in (ROOT / "ciudades").glob("*.html")]
+  + [f"ciudades/{p.name}" for p in (ROOT / "ciudades").glob("*.html")] \
+  + [f"guias/{p.name}" for p in (ROOT / "guias").glob("*.html")]
 
 HEADER = (ROOT / "partials/header.html").read_text(encoding="utf-8")
 FOOTER = (ROOT / "partials/footer.html").read_text(encoding="utf-8")

@@ -20,6 +20,11 @@ Contacto: WhatsApp/teléfono +57 301 775 0462 · correo hola@insumosyembalajes.c
 - [Manizales](https://insumosyembalajes.com.co/ciudades/manizales.html)
 - [Armenia](https://insumosyembalajes.com.co/ciudades/armenia.html)
 
+## Guías de compra
+
+- [¿Cuánto stretch film necesitas para una estiba?](https://insumosyembalajes.com.co/guias/cuanto-stretch-necesitas.html): cuántas vueltas dar en la base, el cuerpo y el cierre según el peso y estabilidad de la carga.
+- [Grosor de cartón corrugado según el peso](https://insumosyembalajes.com.co/guias/grosor-carton-segun-peso.html): cuándo usar pared sencilla (hasta ~20kg) o pared doble (~20-30kg o más).
+
 ## Otras páginas
 
 - [Tienda / armar pedido](https://insumosyembalajes.com.co/tienda.html): selector de productos que arma un mensaje de WhatsApp con el pedido, sin necesidad de ver precios en la web (los precios se confirman por WhatsApp).
