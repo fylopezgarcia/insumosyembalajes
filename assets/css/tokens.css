@@ -1,32 +1,34 @@
 /*
-  Paleta basada en el logo real de la empresa (emblema circular dorado/negro
-  sobre fondo blanco). Se refina a un dorado más terroso (menos "trofeo",
-  más metal/latón industrial) y se le suma un verde profundo como acento
-  secundario — nexo con el Eje Cafetero sin caer en cliché de café marrón/crema.
+  Kraft Industrial v3 — calibrada sobre el logo real (no colores inventados).
+  --gold y --ink se muestrearon por promedio de píxeles del emblema real
+  (logo_insumos_hernandez_300dpi_fondo_blanco.jpg): dorado promedio #A38C3B,
+  tinta oscura promedio #3C3933. --paper viene de papel kraft sin blanquear
+  (~#D5B59C) aclarado para fondo de pantalla; --secondary es verde de
+  reciclaje/FSC (~#09710D) templado para convivir con el kraft.
 */
 :root{
   /* Marca */
-  --gold: #B8862E;
-  --gold-deep: #8C6520;
-  --ink: #1C1A17;
-  --ink-soft: #3A362E;
+  --gold: #A6883A;
+  --gold-deep: #7C6329;
+  --ink: #33302A;
+  --ink-soft: #4A453C;
 
   /* Superficies */
-  --paper: #FAF8F3;
+  --paper: #F1E4D3;
   --surface: #FFFFFF;
-  --surface-2: #F1EDE2;
-  --border: #E3DCC9;
-  --border-strong: #CFC5A6;
+  --surface-2: #EBDDC8;
+  --border: #DCC9A6;
+  --border-strong: #C7AF88;
 
   /* Texto */
   --text: var(--ink);
-  --text-muted: #6B6455;
-  --text-faint: #948C74;
+  --text-muted: #756F63;
+  --text-faint: #948C7C;
   --on-dark: #F5F1E6;
 
-  /* Acento secundario (confianza / Eje Cafetero) */
-  --green: #2B6A4C;
-  --green-deep: #1E4A35;
+  /* Acento secundario — verde de reciclaje/FSC (~#09710D), templado para convivir con el kraft */
+  --green: #3C7A4A;
+  --green-deep: #275434;
 
   /* Estado */
   --success-bg: #E5F1EA;
