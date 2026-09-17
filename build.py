@@ -27,7 +27,7 @@ DIST = ROOT / "dist"
 
 PAGES = [
     "index.html", "tienda.html", "nosotros.html", "contacto.html",
-    "preguntas-frecuentes.html",
+    "preguntas-frecuentes.html", "404.html",
 ] + [f"categorias/{p.name}" for p in (ROOT / "categorias").glob("*.html")] \
   + [f"ciudades/{p.name}" for p in (ROOT / "ciudades").glob("*.html")] \
   + [f"guias/{p.name}" for p in (ROOT / "guias").glob("*.html")]

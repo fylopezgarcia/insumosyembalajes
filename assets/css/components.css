@@ -188,6 +188,11 @@
   transition:transform .15s ease;
 }
 .wa-float:hover{ transform:scale(1.08); animation-play-state:paused; }
+/* En la Tienda, en celular, la barra fija del pedido ya cumple el rol del
+   botón flotante — mostrar los dos se pisan y confunden cuál usar. */
+@media (max-width:600px){
+  body:has(.ih-picker) .wa-float{ display:none; }
+}
 .wa-float svg{ width:30px; height:30px; fill:#fff; }
 @keyframes wa-breathe{
   0%, 100%{ transform:scale(1); }
@@ -262,8 +267,14 @@
 .ih-picker .ih-send:disabled{ opacity:.4; cursor:not-allowed; }
 .ih-picker .ih-note{ font-size:12.5px; color:var(--text-faint); margin-top:12px; }
 @media (max-width:600px){
-  .ih-picker{ padding:22px 16px 110px; }
-  .ih-picker .ih-bar{ flex-direction:column; align-items:stretch; }
+  .ih-picker{ padding:22px 16px 96px; }
+  /* En celular la barra queda fija abajo del todo (como un carrito de app),
+     en vez de "casi pegada" mientras aún queda lista por debajo — así nunca
+     tapa el producto que se está tocando. */
+  .ih-picker .ih-bar{
+    position:fixed; left:16px; right:16px; bottom:14px; margin-top:0;
+    flex-direction:column; align-items:stretch; z-index:55;
+  }
   .ih-picker .ih-send{ width:100%; }
 }
 
