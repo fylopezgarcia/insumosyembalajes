@@ -18,3 +18,8 @@ Grapa metálica, Papel kraft. Papelería y Herramientas (categorías) tampoco ti
 - Los nombres de los productos nuevos de la Tienda salen de los nombres de archivo de las fotos (p. ej. "Stretch 12.5 cm", "Cinta de colores"). Confirmar nombre, medida y unidad de venta.
 - Stretch: la Tienda ya tenía "40 cm"; ahora hay también 12.5, 15, 30 y 45. Verificar si 40 y 45 son el mismo producto.
 - Zuncho: solo plástico por ahora (el metálico no se publica). Grapas: plásticas y metálicas.
+
+## Portadas (generadas con `tools/make_covers.py`)
+- `hero-inicio.jpg`, `cat-*.jpg` (4:3) y `banner-*.jpg` (3:1) son composiciones de las fotos reales de arriba. Para regenerarlas: `python3 tools/make_covers.py`.
+- `cat-carton.jpg` usa imágenes de referencia (corrugado, burbuja, yumbolón) y `cat-herramientas.jpg` es una imagen generada con IA. Reemplazar cuando haya foto propia.
+- `bodega-nosotros.jpg` (página Nosotros) no es verificable como foto de la bodega real: revisar.
