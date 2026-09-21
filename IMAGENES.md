@@ -1,19 +1,20 @@
 # Imágenes de producto — origen y pendientes
 
-Carpeta: `assets/img/productos/` (800×800, JPG).
+Carpeta: `assets/img/productos/` (JPG, 720–800 px, cuadradas).
 
-## Fotos reales (fotogramas de los videos propios)
-- `zuncho.jpg` — tres rollos de zuncho apilados (video WhatsApp 12.00.48)
-- `zuncho-en-caja.jpg` — zuncho amarillo en una caja (WhatsApp 12.00.47)
-- `cintas-y-zuncho.jpg` — rollos y cinta sobre la mesa (WhatsApp 12.00.47)
-- `burbuja-en-accion.jpg` — papel burbuja envolviendo un equipo (002.mp4)
+## Fotos reales de estudio propias (`01 INSUMOS/CONTENIDO ORIGINAL INSUMOS/`)
+Cintas (transparente 100 micras, de colores, pesada, aluminio, ducto, enmascarar, antideslizante, cera x300), etiquetas (rollo, nailon, rollo continuo), grapas plásticas, Pantera (Multitack e incoloro), stretch (12.5, 12.5 negro, 15, 30, 45) y vinipel.
+
+## Fotogramas de los videos propios
+`zuncho`, `zuncho-en-caja`, `cintas-y-zuncho`, `burbuja-en-accion`.
 
 ## Imágenes de referencia (reemplazar por foto propia)
-Vienen de la carpeta 01 INSUMOS y su origen no es propio verificado. Sirven para el MVP, pero reemplazar cuando haya foto real:
-`carton-corrugado`, `cinta-transparente`, `cinta-de-cera`, `plastico-burbuja`, `grapa-plastica`, `stretch`, `espuma-polietileno`.
+`carton-corrugado`, `plastico-burbuja`, `espuma-polietileno`.
 
-## Sin imagen (recuadro neutro en la Tienda)
-Pegamento Pantera, Papel kraft, Etiquetas personalizadas. Además Papelería y Herramientas no tienen foto real.
+## Sin foto (recuadro neutro en la Tienda)
+Grapa metálica, Papel kraft. Papelería y Herramientas (categorías) tampoco tienen foto real.
 
-## Descartado
-Imágenes con logo antiguo o textos en el diseño, capturas de anuncios, facturas/PDF, y las 283 miniaturas de búsqueda de "grapa plástica" (de terceros).
+## Por confirmar con el negocio
+- Los nombres de los productos nuevos de la Tienda salen de los nombres de archivo de las fotos (p. ej. "Stretch 12.5 cm", "Cinta de colores"). Confirmar nombre, medida y unidad de venta.
+- Stretch: la Tienda ya tenía "40 cm"; ahora hay también 12.5, 15, 30 y 45. Verificar si 40 y 45 son el mismo producto.
+- Zuncho: solo plástico por ahora (el metálico no se publica). Grapas: plásticas y metálicas.
