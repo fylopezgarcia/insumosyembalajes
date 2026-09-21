@@ -80,10 +80,10 @@
 /* ============ Hero ============ */
 .hero{
   display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:40px;
-  padding:52px 0 60px;
+  padding-block:52px 60px;
 }
 @media (max-width:900px){
-  .hero{ grid-template-columns:1fr; padding:22px 0 32px; gap:20px; }
+  .hero{ grid-template-columns:1fr; padding-block:22px 32px; gap:20px; }
 }
 .hero h1{ margin-bottom:14px; }
 @media (max-width:480px){

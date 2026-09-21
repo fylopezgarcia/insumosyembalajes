@@ -20,6 +20,7 @@ Grapa metálica, Papel kraft. Papelería y Herramientas (categorías) tampoco ti
 - Zuncho: solo plástico por ahora (el metálico no se publica). Grapas: plásticas y metálicas.
 
 ## Portadas (generadas con `tools/make_covers.py`)
-- `hero-inicio.jpg`, `cat-*.jpg` (4:3) y `banner-*.jpg` (3:1) son composiciones de las fotos reales de arriba. Para regenerarlas: `python3 tools/make_covers.py`.
+- `hero-inicio.jpg` se genera con `tools/make_hero.py` a partir de productos recortados (`tools/cutouts/`, hechos con `tools/cutout.swift` sobre las fotos reales).
+- `cat-*.jpg` (4:3) y `banner-*.jpg` (3:1) son composiciones de las fotos reales de arriba. Para regenerarlas: `python3 tools/make_covers.py`.
 - `cat-carton.jpg` usa imágenes de referencia (corrugado, burbuja, yumbolón) y `cat-herramientas.jpg` es una imagen generada con IA. Reemplazar cuando haya foto propia.
 - `bodega-nosotros.jpg` (página Nosotros) no es verificable como foto de la bodega real: revisar.
