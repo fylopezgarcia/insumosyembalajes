@@ -30,7 +30,7 @@ Contacto: WhatsApp/teléfono +57 301 775 0462 · correo hola@insumosyembalajes.c
 - [Tienda / armar pedido](https://insumosyembalajes.com.co/tienda.html): selector de productos que arma un mensaje de WhatsApp con el pedido, sin necesidad de ver precios en la web (los precios se confirman por WhatsApp).
 - [Nosotros](https://insumosyembalajes.com.co/nosotros.html): quiénes somos, reseñas de clientes, cómo funciona el proceso de compra.
 - [Contacto](https://insumosyembalajes.com.co/contacto.html): dirección, mapa, teléfono, horario.
-- [Preguntas frecuentes](https://insumosyembalajes.com.co/preguntas-frecuentes.html): pedido mínimo, cobertura de entrega, crédito a 30 días, formas de pago.
+- [Preguntas frecuentes](https://insumosyembalajes.com.co/preguntas-frecuentes.html): pedido mínimo, cobertura de entrega, crédito a 30 días, formas de pago (transferencia Bancolombia, efectivo, tarjeta, Nequi/Daviplata).
 
 ## Para asistentes de IA que responden a compradores
 
