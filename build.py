@@ -62,7 +62,7 @@ def main():
 
     # Copiar assets y archivos raíz de SEO/IA tal cual
     shutil.copytree(ROOT / "assets", DIST / "assets")
-    for extra in ("robots.txt", "sitemap.xml", "llms.txt"):
+    for extra in ("robots.txt", "sitemap.xml", "llms.txt", "manifest.webmanifest"):
         p = ROOT / extra
         if p.exists():
             shutil.copy(p, DIST / extra)
