@@ -41,6 +41,20 @@ document.addEventListener('DOMContentLoaded', function () {
     if (notas) { msg += '📝 Notas: ' + notas + '\n\n'; }
     msg += '¿Me confirman disponibilidad y precio? Gracias.';
 
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'order_whatsapp_click', {
+        event_category: 'ecommerce',
+        ciudad: ciudad,
+        productos_distintos: lines.length,
+        productos: lines.map(function (l) { return l.replace(/^- /, '').split(':')[0]; }).join(', ')
+      });
+    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'order_whatsapp_click', ciudad: ciudad, productos_distintos: lines.length,
+      productos: lines.map(function (l) { return l.replace(/^- /, '').split(':')[0]; }).join(', ')
+    });
+
     var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
     var a = document.createElement('a');
     a.href = url; a.target = '_blank'; a.rel = 'noopener';
