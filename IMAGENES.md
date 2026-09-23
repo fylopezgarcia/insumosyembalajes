@@ -62,3 +62,14 @@ cart.js) y vacía el carrito compartido al enviar desde la Tienda.
 Corregido de paso: "Cinta transparente" (categoría) no coincidía con
 "Cinta transparente 48mm" (Tienda) — ahora usan el mismo nombre exacto,
 necesario para que el carrito los reconozca como el mismo producto.
+
+
+## Logo principal (header) restaurado a la versión completa
+`logo-header.png` volvió a ser el logo completo (aro dorado con el texto
+"SERVICIOS E INSUMOS HERNÁNDEZ S.A.S." + fábrica), generado en alta
+resolución desde `brand/logo-master.png`, en vez de la marca simplificada
+de solo la fábrica que se había hecho para que fuera legible en 32px.
+La marca simplificada queda guardada como `logo-header-mark-simple.png`
+por si se necesita después. Favicon y el ícono mono del pie de página
+siguen con la marca simplificada — a esos tamaños tan pequeños, el logo
+completo no se lee bien.
