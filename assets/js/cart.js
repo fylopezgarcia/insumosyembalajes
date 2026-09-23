@@ -10,7 +10,7 @@
 */
 (function () {
   var KEY = 'ih_cart_v1';
-  var WHATSAPP_NUMBER = '573017750462';
+  var WHATSAPP_NUMBER = '573104032401';
 
   function read() {
     try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; }
