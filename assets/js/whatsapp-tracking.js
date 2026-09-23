@@ -21,18 +21,20 @@ document.addEventListener('click', function (e) {
   if (!link) return;
 
   var context = document.title || location.pathname;
+  var producto = link.dataset.producto || '';
 
   if (typeof window.gtag === 'function') {
     window.gtag('event', 'whatsapp_click', {
       event_category: 'engagement',
-      event_label: context,
+      event_label: producto || context,
+      producto: producto,
       page_path: location.pathname
     });
   }
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event: 'whatsapp_click', wa_context: context, wa_page: location.pathname });
+  window.dataLayer.push({ event: 'whatsapp_click', wa_context: context, wa_producto: producto, wa_page: location.pathname });
 
   if (typeof window.fbq === 'function') {
-    window.fbq('track', 'Contact', { content_name: context });
+    window.fbq('track', 'Contact', { content_name: producto || context });
   }
 }, true);
