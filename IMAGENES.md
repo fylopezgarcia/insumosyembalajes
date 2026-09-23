@@ -36,3 +36,14 @@ Grapa metálica, Papel kraft. Papelería y Herramientas (categorías) tampoco ti
 
 ## Papelería: productos confirmados con el negocio
 Resmas de papel, lápices, lapiceros, cuadernos — agregados a la Tienda y a la tabla de la categoría (antes solo decía "Escritorio" genérico).
+
+
+## Cartón, Cintas, Zunchado, Stretch: de vuelta al collage original
+Por pedido del negocio, `cat-carton.jpg`, `cat-cintas.jpg`, `cat-zunchado.jpg` y `cat-stretch.jpg`
+volvieron al estilo de rejilla de 3 fotos con bordes redondeados (el primero que hicimos, con
+`tools/make_covers.py`), en vez del fondo verde pino dramático. Papelería, Etiquetas y
+Herramientas conservan sus fotos/banners reales — no se tocaron.
+
+## Orden de categorías
+"Etiquetas y consumibles" va ANTES que "Papelería" en todo el sitio (menú, inicio, Tienda,
+sitemap, llms.txt y los cruces "también te puede interesar" de las demás categorías).
