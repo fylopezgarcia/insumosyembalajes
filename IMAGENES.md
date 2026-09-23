@@ -27,3 +27,12 @@ Grapa metálica, Papel kraft. Papelería y Herramientas (categorías) tampoco ti
 - `banner-*.jpg` (3:1, para el encabezado de cada página de categoría) siguen con el estilo de rejilla anterior — pendiente aplicarles el mismo tratamiento si se quiere consistencia total.
 - `cat-herramientas.jpg` es una imagen generada por IA (a partir de un prompt propio, sin logos ni texto de marca — se verificó que no reproduce ningún logo real). El negocio confirmó que sí distribuye SATA, pero esta imagen NO es una foto real de su inventario ni de la marca SATA; es una recreación genérica mientras no haya foto propia. `tools/make_herramientas.py` (ilustración con PIL) queda como alternativa/respaldo si se necesita.
 - `bodega-nosotros.jpg` (Nosotros) confirmado: la anterior era generada con IA. Se reemplazó por `tools/make_nosotros.py`, un mosaico de 3 fotogramas reales de los videos propios (manos aplicando cinta a una caja, papel burbuja envolviendo un mueble, cartón en movimiento).
+
+
+## Nueva categoría: Etiquetas y consumibles (separada de Papelería)
+- `cat-etiquetas.jpg`: banner real generado, con logo propio, texto "Etiquetas y material para recibos" y sellos de confianza — igual tratamiento que `papeleria-banner.png`.
+- Productos movidos de Papelería a esta categoría en la Tienda: Etiquetas térmicas personalizadas, Etiqueta en nailon, Rollo continuo.
+- `tools/make_category_scenes.py` ya NO genera `cat-papeleria.jpg` ni `cat-etiquetas.jpg` — quedan protegidos como fotos/banners reales.
+
+## Papelería: productos confirmados con el negocio
+Resmas de papel, lápices, lapiceros, cuadernos — agregados a la Tienda y a la tabla de la categoría (antes solo decía "Escritorio" genérico).

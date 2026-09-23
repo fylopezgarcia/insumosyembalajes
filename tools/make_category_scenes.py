@@ -93,12 +93,9 @@ place(c, "strech-45", 340, 490, 480, ang=-12)
 place(c, "strech-12.5negro", 760, 460, 430, ang=9)
 save(c, "cat-stretch")
 
-# ---- Papelería ----
-c = scene_bg()
-place(c, "etiqueta-rollo1", 320, 470, 460, ang=10)
-place(c, "etiqueta-nailon", 690, 490, 510, ang=-8)
-place(c, "rollo-cera", 990, 460, 400, ang=12)
-save(c, "cat-papeleria")
+# Nota: cat-papeleria.jpg y cat-etiquetas.jpg YA NO se generan aquí — son
+# fotos/banners reales (ver papeleria-banner.png, etiquetas-y-recibos.png en
+# IMAGENES.md). No volver a correr esos bloques.
 
 # ---- Cartón y protección ----
 c = scene_bg()
