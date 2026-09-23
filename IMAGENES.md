@@ -21,7 +21,7 @@ Grapa metálica, Papel kraft. Papelería y Herramientas (categorías) tampoco ti
 
 ## Portadas (generadas con `tools/make_covers.py`)
 - `hero-inicio.jpg` se genera con `tools/make_hero.py` a partir de productos recortados (`tools/cutouts/`, hechos con `tools/cutout.swift` sobre las fotos reales).
-- Rediseñadas como una sola escena de estudio (sin rejilla de tarjetas): `tools/make_category_scenes.py` genera `cat-cintas`, `cat-zunchado`, `cat-stretch`, `cat-papeleria` y `cat-carton` a partir de recortes reales en `tools/cutouts/`.
+- `tools/make_category_scenes.py` genera `cat-cintas`, `cat-zunchado`, `cat-stretch`, `cat-papeleria` y `cat-carton`: productos reales recortados, con ligera inclinación y luz cálida de borde, sobre fondo verde pino oscuro con viñeta — mismo ambiente que la foto de Herramientas, pero con nuestras fotos.
 - `cat-carton.jpg` sigue usando imágenes de referencia (corrugado, burbuja, yumbolón), ya recortadas y compuestas igual que las demás. Reemplazar los recortes cuando haya foto propia.
 - `banner-*.jpg` (3:1, para el encabezado de cada página de categoría) siguen con el estilo de rejilla anterior — pendiente aplicarles el mismo tratamiento si se quiere consistencia total.
 - `cat-herramientas.jpg` es una imagen generada por IA (a partir de un prompt propio, sin logos ni texto de marca — se verificó que no reproduce ningún logo real). El negocio confirmó que sí distribuye SATA, pero esta imagen NO es una foto real de su inventario ni de la marca SATA; es una recreación genérica mientras no haya foto propia. `tools/make_herramientas.py` (ilustración con PIL) queda como alternativa/respaldo si se necesita.
