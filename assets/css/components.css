@@ -250,6 +250,9 @@
 .page-hero{ padding:36px 0 8px; }
 .page-hero .eyebrow{ margin-bottom:8px; display:block; }
 .page-hero p.lead{ color:var(--text-muted); max-width:65ch; margin-top:10px; }
+@media (max-width:480px){
+  .page-hero .brand-seal{ width:76px !important; height:76px !important; }
+}
 
 /* ============ Selector de pedido (Tienda) ============ */
 .ih-picker{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 26px 100px; position:relative; box-shadow:var(--shadow-sm); }
