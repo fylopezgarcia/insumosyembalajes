@@ -22,10 +22,27 @@
 .site-header.is-scrolled .container{ height:58px; }
 .site-header.is-scrolled .brand img{ height:34px; width:34px; }
 .site-header.is-scrolled .brand .brand-text small{ display:none; }
-.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; flex:none; }
-.brand img{ height:44px; width:44px; border-radius:50%; }
-.brand .brand-text{ font-family:var(--font-display); font-weight:800; font-size:16px; line-height:1.15; color:var(--ink); }
-.brand .brand-text small{ display:block; font-family:var(--font-mono); font-weight:500; font-size:10.5px; letter-spacing:.06em; color:var(--text-muted); text-transform:uppercase; }
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; flex:1 1 auto; min-width:0; }
+.brand img{ height:44px; width:44px; border-radius:50%; flex:none; }
+.brand .brand-text{
+  font-family:var(--font-display); font-weight:800; font-size:16px; line-height:1.15; color:var(--ink);
+  min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.brand .brand-text small{
+  display:block; font-family:var(--font-mono); font-weight:500; font-size:10.5px; letter-spacing:.06em;
+  color:var(--text-muted); text-transform:uppercase; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.header-cta{ flex:none; }
+/* El nombre completo pesa más que el eslogan — si no cabe todo, se
+   oculta el eslogan en vez de truncar "Insumos Hernández". */
+@media (max-width:480px){
+  .brand .brand-text small{ display:none; }
+  .site-header .container{ gap:10px; padding:0 16px; }
+  .brand{ gap:8px; }
+  .brand img{ height:38px; width:38px; }
+  .header-cta{ gap:8px; }
+  .nav-toggle{ padding:8px; }
+}
 
 .main-nav{ display:flex; align-items:center; gap:22px; }
 .main-nav a{
