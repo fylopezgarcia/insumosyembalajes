@@ -135,9 +135,18 @@
     document.querySelectorAll('table.spec-table tr td [data-producto]').forEach(function (link) {
       var row = link.closest('tr');
       var cell = link.closest('td');
+      var nameCell = row.children[0];
       var unitCell = row.children[1];
+      var unitText = unitCell ? unitCell.textContent.trim() : '';
       row.dataset.cartName = link.dataset.producto;
-      row.dataset.cartUnit = shortUnit(unitCell ? unitCell.textContent : '');
+      row.dataset.cartUnit = shortUnit(unitText);
+      // Subtítulo compacto (solo visible en celular) para no depender de la
+      // columna "Presentación", que ahí se oculta para que la fila quepa
+      // en una sola línea de pantalla.
+      var sub = document.createElement('span');
+      sub.className = 'spec-unit-mobile';
+      sub.textContent = unitText;
+      nameCell.appendChild(sub);
       cell.innerHTML = '<div class="ih-stepper">' +
         '<button type="button" data-action="down" aria-label="Quitar uno">–</button>' +
         '<span class="ih-qty">0</span>' +
