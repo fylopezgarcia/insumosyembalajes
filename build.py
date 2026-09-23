@@ -18,6 +18,7 @@ Sigue editando partials/header.html y partials/footer.html como fuente única;
 corre este script antes de cada subida a producción. dist/ se regenera por
 completo en cada corrida (no lo edites a mano).
 """
+import hashlib
 import re
 import shutil
 from pathlib import Path
@@ -68,7 +69,36 @@ def main():
             shutil.copy(p, DIST / extra)
             print("copied:", extra)
 
+    bust_cache()
     print(f"\nListo. Sube el CONTENIDO de {DIST} (no la carpeta en sí) a la raíz del hosting.")
+
+
+def bust_cache():
+    """
+    Hostinger sirve CSS/JS con cache-control de 7 días (ver .htaccess): sin
+    esto, cada corrección tarda hasta una semana en verse en los celulares
+    que ya visitaron el sitio (Safari, y sobre todo el navegador interno de
+    WhatsApp, que cachea aparte y es más difícil de refrescar a mano).
+
+    Le agrega "?v=<hash del contenido>" a cada CSS/JS en el HTML ya generado,
+    así el navegador solo vuelve a descargar el archivo cuando su contenido
+    realmente cambió — el resto del tiempo sigue aprovechando la caché.
+    """
+    versions = {}
+    for f in list((DIST / "assets/css").glob("*.css")) + list((DIST / "assets/js").glob("*.js")):
+        rel = "/" + f.relative_to(DIST).as_posix()
+        versions[rel] = hashlib.md5(f.read_bytes()).hexdigest()[:8]
+
+    pattern = re.compile(r'((?:href|src)=")(/assets/(?:css|js)/[^"?]+\.(?:css|js))(")')
+
+    def repl(m):
+        path = m.group(2)
+        v = versions.get(path)
+        return f'{m.group(1)}{path}{"?v=" + v if v else ""}{m.group(3)}'
+
+    for f in DIST.glob("**/*.html"):
+        f.write_text(pattern.sub(repl, f.read_text(encoding="utf-8")), encoding="utf-8")
+    print(f"cache-busting: {len(versions)} archivos CSS/JS versionados")
 
 
 if __name__ == "__main__":

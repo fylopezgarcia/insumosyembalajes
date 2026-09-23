@@ -18,6 +18,10 @@ Vas a reemplazar lo que hoy está en Hostinger (el sitio hecho con AI Builder). 
 3. Selecciona **todo** el contenido actual → clic derecho → **Descargar** → guárdalo en una carpeta local tipo `respaldo-sitio-viejo-2026-09/`. No lo borres del servidor todavía.
 4. Solo cuando el sitio nuevo esté subido y verificado en vivo, borras lo viejo del servidor.
 
+## Por qué ya no hay que preocuparse por la caché
+
+`build.py` le agrega automáticamente `?v=<hash>` a cada CSS y JS — cuando el contenido de un archivo cambia, su URL cambia, y el navegador (incluido el de WhatsApp) descarga la versión nueva sin que nadie tenga que borrar caché a mano. Antes de esto, Hostinger guardaba esos archivos hasta 7 días.
+
 ## Cada vez que publiques un cambio
 
 1. **Edita** lo que necesites dentro de `sitio-nuevo/` (páginas, `partials/header.html`, `partials/footer.html`, `assets/css/`, etc.).
