@@ -47,3 +47,18 @@ Herramientas conservan sus fotos/banners reales — no se tocaron.
 ## Orden de categorías
 "Etiquetas y consumibles" va ANTES que "Papelería" en todo el sitio (menú, inicio, Tienda,
 sitemap, llms.txt y los cruces "también te puede interesar" de las demás categorías).
+
+
+## Carrito compartido entre categorías (assets/js/cart.js)
+Las tablas de especificación de Zunchado, Cintas, Cartón y Etiquetas ahora tienen
+un selector de cantidad (+/-) igual al de la Tienda, en vez de un botón "Cotizar"
+fijo. Se guarda en localStorage (`ih_cart_v1`) y persiste al navegar entre
+categorías. Una barra flotante permite enviarlo por WhatsApp desde cualquier
+página; en la Tienda se oculta sola porque ya existe su propia barra (con
+campos de empresa/ciudad) — y esos mismos productos llegan prellenados ahí.
+`order-builder.js` ya no maneja los clics +/- directamente (los delega en
+cart.js) y vacía el carrito compartido al enviar desde la Tienda.
+
+Corregido de paso: "Cinta transparente" (categoría) no coincidía con
+"Cinta transparente 48mm" (Tienda) — ahora usan el mismo nombre exacto,
+necesario para que el carrito los reconozca como el mismo producto.

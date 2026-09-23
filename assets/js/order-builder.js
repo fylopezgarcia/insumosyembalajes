@@ -12,16 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     root.querySelector('#ih-send').disabled = !(total > 0 || notas.length > 0);
   }
 
-  root.querySelectorAll('.ih-stepper button').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var qtyEl = btn.parentElement.querySelector('.ih-qty');
-      var qty = parseInt(qtyEl.textContent, 10) || 0;
-      if (btn.dataset.action === 'up') qty += 1;
-      if (btn.dataset.action === 'down') qty = Math.max(0, qty - 1);
-      qtyEl.textContent = qty;
-      updateState();
-    });
-  });
+  // Los clics +/- los maneja cart.js (carrito compartido con las tablas de
+  // categoría); aquí solo reaccionamos cuando el carrito cambia.
+  document.addEventListener('ihcart:change', updateState);
   root.querySelector('#ih-notas').addEventListener('input', updateState);
 
   root.querySelector('#ih-send').addEventListener('click', function () {
@@ -61,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+
+    if (typeof window.IHCart !== 'undefined') window.IHCart.clear();
   });
 
   updateState();
