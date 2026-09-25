@@ -17,9 +17,27 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('ihcart:change', updateState);
   root.querySelector('#ih-notas').addEventListener('input', updateState);
 
+  // "Otra ciudad": muestra un campo de texto (con sugerencias de municipios
+  // de Colombia) en vez de dejar el pedido con una ciudad genérica.
+  var ciudadSel = root.querySelector('#ih-ciudad');
+  var ciudadOtraWrap = root.querySelector('#ih-ciudad-otra-wrap');
+  var ciudadOtraInput = root.querySelector('#ih-ciudad-otra');
+  ciudadSel.addEventListener('change', function () {
+    var esOtra = ciudadSel.value === 'Otra ciudad';
+    ciudadOtraWrap.style.display = esOtra ? 'block' : 'none';
+    if (esOtra) ciudadOtraInput.focus();
+  });
+
+  function ciudadFinal() {
+    if (ciudadSel.value === 'Otra ciudad') {
+      return ciudadOtraInput.value.trim() || 'Otra ciudad (sin especificar)';
+    }
+    return ciudadSel.value;
+  }
+
   root.querySelector('#ih-send').addEventListener('click', function () {
     var empresa = root.querySelector('#ih-empresa').value.trim();
-    var ciudad = root.querySelector('#ih-ciudad').value;
+    var ciudad = ciudadFinal();
     var notas = root.querySelector('#ih-notas').value.trim();
     var lines = [];
     root.querySelectorAll('.ih-row').forEach(function (r) {
