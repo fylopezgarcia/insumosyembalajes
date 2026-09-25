@@ -372,3 +372,11 @@ body:has(.cart-bar.is-visible) .wa-float{ display:none; }
 .spec-table th{ background:var(--surface-2); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted); }
 .spec-table tr:last-child td{ border-bottom:none; }
 .table-scroll{ overflow-x:auto; }
+
+/* Foto de producto en la primera columna de la tabla de categoría. */
+.spec-thumb{ width:44px; height:44px; border-radius:8px; object-fit:cover; vertical-align:middle; margin-right:12px; flex:none; }
+.spec-name-col{ display:inline-block; vertical-align:middle; }
+@media (max-width:640px){
+  .spec-table td:first-child{ display:flex; align-items:center; gap:10px; }
+  .spec-thumb{ width:38px; height:38px; margin-right:0; }
+}

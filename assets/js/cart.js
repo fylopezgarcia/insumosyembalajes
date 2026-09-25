@@ -146,7 +146,7 @@
       var sub = document.createElement('span');
       sub.className = 'spec-unit-mobile';
       sub.textContent = unitText;
-      nameCell.appendChild(sub);
+      (nameCell.querySelector('.spec-name-col') || nameCell).appendChild(sub);
       cell.innerHTML = '<div class="ih-stepper">' +
         '<button type="button" data-action="down" aria-label="Quitar uno">–</button>' +
         '<span class="ih-qty">0</span>' +
