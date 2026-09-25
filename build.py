@@ -19,6 +19,7 @@ corre este script antes de cada subida a producción. dist/ se regenera por
 completo en cada corrida (no lo edites a mano).
 """
 import hashlib
+import json
 import re
 import shutil
 from pathlib import Path
@@ -69,8 +70,76 @@ def main():
             shutil.copy(p, DIST / extra)
             print("copied:", extra)
 
+    inject_product_schema()
     bust_cache()
     print(f"\nListo. Sube el CONTENIDO de {DIST} (no la carpeta en sí) a la raíz del hosting.")
+
+
+ROW_RE = re.compile(
+    r'<tr>\s*'
+    r'<td>(?:<img class="spec-thumb" src="([^"]+)"[^>]*>)?'
+    r'<span class="spec-name-col"><b>([^<]+)</b></span></td>\s*'
+    r'<td>([^<]*)</td>\s*'
+    r'<td>([^<]*)</td>\s*'
+    r'<td>.*?</td>\s*'
+    r'</tr>',
+    re.S,
+)
+BREADCRUMB_RE = re.compile(r'<nav class="breadcrumb">.*</a>\s*/\s*([^<]+?)\s*</nav>')
+CANONICAL_RE = re.compile(r'<link rel="canonical" href="([^"]+)"')
+SITE = "https://insumosyembalajes.com.co"
+BRAND = {"@type": "Organization", "name": "Servicios e Insumos Hernández S.A.S."}
+
+
+def inject_product_schema():
+    """
+    Marca cada producto de las tablas de categoría como schema.org/Product
+    (dentro de un ItemList), para que buscadores y asistentes de IA puedan
+    leer nombre, foto, descripción y categoría de cada uno directamente
+    desde el HTML — sin precio ni "offers", porque el negocio cotiza por
+    WhatsApp y no maneja precio fijo publicado (agregarlo sin uno real
+    violaría las guías de datos estructurados de Google).
+    """
+    n_pages = 0
+    n_products = 0
+    for f in sorted((DIST / "categorias").glob("*.html")):
+        html = f.read_text(encoding="utf-8")
+        rows = ROW_RE.findall(html)
+        if not rows:
+            continue
+        crumb = BREADCRUMB_RE.search(html)
+        canon = CANONICAL_RE.search(html)
+        category = crumb.group(1).strip() if crumb else None
+        page_url = canon.group(1) if canon else None
+
+        items = []
+        for i, (img, name, presentacion, uso) in enumerate(rows, start=1):
+            product = {
+                "@type": "Product",
+                "name": name.strip(),
+                "description": (uso.strip() or presentacion.strip()),
+                "brand": BRAND,
+            }
+            if category:
+                product["category"] = category
+            if img:
+                product["image"] = SITE + img
+            if page_url:
+                product["url"] = page_url
+            items.append({"@type": "ListItem", "position": i, "item": product})
+            n_products += 1
+
+        data = {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": category or f.stem,
+            "itemListElement": items,
+        }
+        script = '<script type="application/ld+json">\n' + json.dumps(data, ensure_ascii=False, indent=2) + '\n</script>\n'
+        html = html.replace("</head>", script + "</head>", 1)
+        f.write_text(html, encoding="utf-8")
+        n_pages += 1
+    print(f"product schema: {n_products} productos en {n_pages} páginas de categoría")
 
 
 def bust_cache():
