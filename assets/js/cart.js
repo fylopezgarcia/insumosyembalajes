@@ -122,10 +122,11 @@
   // corta y consistente con la Tienda ("rollo(s)") para el mensaje de WhatsApp.
   function shortUnit(raw) {
     var t = (raw || '').trim();
-    var m = /^Por (rollo|paquete|unidad|kilo)\b/i.exec(t);
+    var m = /^Por (rollo|paquete|unidad|kilo|juego)\b/i.exec(t);
     if (m) return m[1].toLowerCase() + '(s)';
     if (/rollo/i.test(t)) return 'rollo(s)';
     if (/paquete/i.test(t)) return 'paquete(s)';
+    if (/juego/i.test(t)) return 'juego(s)';
     if (/unidad/i.test(t)) return 'unidad(es)';
     return t;
   }
